@@ -11,3 +11,8 @@ output "external_ip_address" {
   }
   description = "Virtual machine extrernal IP-address"
 }
+
+output "network_load_balancer_listener" {
+  value = "${module.nlb_create.*}"
+  description = "Network Load Balancer listener parameters - ipaddr, ports and so on"
+}
