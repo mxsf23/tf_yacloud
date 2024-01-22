@@ -15,6 +15,7 @@ variable "cloud_id" {
   type = string
 }
 
+
 variable "secgroup_id" {
   description = "Security group ID. This variable doesn't apply to anything. Used as a mark for furture. It's always Default yet."
   default = "default"
@@ -35,11 +36,6 @@ variable "secret_key" {
   type = string
 }
 
-variable "vms" {
-  type = map(any)
-  description = "List of virtual machines to be deployed.  Default values and structure example in tfvars file."
-}
-
 variable "v4_cidr_blocks" {
   type = list (string)
   description = "IPv4 network for private subnet"
@@ -58,4 +54,9 @@ variable "subnet_name" {
   default = "subnet1"
 }
 
+variable "nlb_target_groupname" {
+  type = string
+  description = "Target VM group name for Network Load Balancer"
+  default = "web-vms-01"
+}
 
